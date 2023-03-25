@@ -30,12 +30,20 @@ function LoginPage() {
     authService
       .login(requestBody)
       .then((response) => {
+        
         // If the POST request is successful store the authentication token,
         // after the token is stored authenticate the user
         // and at last navigate to the home page
         storeToken(response.data.authToken);
         authenticateUser();
-        navigate("/");
+
+        if(response.data.role=="comprador") {
+          navigate("/home");
+
+        }else{
+          navigate("/form");
+
+        }
       })
       .catch((error) => {
         // If the request resolves with an error, set the error message in the state
@@ -45,8 +53,11 @@ function LoginPage() {
   };
 
   return (
-    <div className="LoginPage">
-      <h1>Login</h1>
+
+    <div class="container">
+          <div class="mx-card">
+          <div className="LoginPage">
+      <h4>Inicia sesión:</h4>
 
       <form onSubmit={handleLoginSubmit}>
         <label>Email:</label>
@@ -64,9 +75,14 @@ function LoginPage() {
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p>Don't have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
+      <p>¿Aún no tienes una cuenta?</p>
+      <Link to={"/signup"}>Regístrate</Link>
     </div>
+          </div>
+        </div>
+
+
+    
   );
 }
 

@@ -10,6 +10,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import DetailCard from "./pages/DetailCard/DetailCard";
 import FormCar from "./pages/FormCar/FormCar";
 import ProfileSeller from "./pages/ProfileSeller/ProfileSeller";
+import FormEdit from "./pages/FormEdit/FormEdit";
 
 
 import Navbar from "./components/Navbar/Navbar";
@@ -22,9 +23,11 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/home" element={<HomePage />} />
-        <Route path="/detail" element={<DetailCard />} />
+        <Route path="/detail/:id" element={<DetailCard />} />
         <Route path="form" element={<FormCar/>}/>
-        <Route path="profile" element={<ProfileSeller/>}/>
+        <Route path="profileSeller" element={<ProfileSeller/>}/>
+        <Route path="/formEdit/:id" element={<FormEdit/>}/>
+
 
         <Route
           path="/profile"

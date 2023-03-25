@@ -1,69 +1,161 @@
 import "./DetailCard.css";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 
 function DetailCard() {
-  return (
-    
-          
+  const [detail, setDetail] = useState([]);
+  const [recuperado, setRecuperado] = useState(false);
+  const params = useParams();
+  const urlDetail = "http://localhost:5005/api/get-auto/" + params.id;
+  console.log(params.id)
+
+  useEffect(() => {
+    fetch(urlDetail, {
+      method: "GET"
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setDetail(data);
+        setRecuperado(true);
+      })
+
+      .catch(err => console.log("el error", err));
+  }, [])
+  if (recuperado == true) {
+    return (
       <div>
-     <div>
-     <header>
-    <h1>aqui va el modelo</h1>
-</header>
-		
-      
-<div class="container">
-<div class="row">
-<div class="col s3 m3"><img src="https://source.unsplash.com/800x600/?beach" alt="" class="materialboxed responsive-img"></img></div>  
-<div class="col s3 m3"><img src="https://source.unsplash.com/800x600/?sand" alt="" class="materialboxed responsive-img"></img></div>
-<div class="col s3 m3"><img src="https://source.unsplash.com/800x600/?boat" alt="" class="materialboxed responsive-img"></img></div>
-  <div class="col s3 m3"><img src="https://source.unsplash.com/800x600/?cruise" alt="" class="materialboxed responsive-img"></img></div>
+        <div>
 
-  </div>
-</div>
-			
+<h5>{detail.marca} {detail.modelo}</h5>
+
+          <div class="container">
+            <div class="row">
+              <div class="col s3 m3"><img src="https://source.unsplash.com/800x600/?beach" alt="" class="materialboxed responsive-img"></img></div>
+              <div class="col s3 m3"><img src="https://source.unsplash.com/800x600/?sand" alt="" class="materialboxed responsive-img"></img></div>
+              <div class="col s3 m3"><img src="https://source.unsplash.com/800x600/?boat" alt="" class="materialboxed responsive-img"></img></div>
+              <div class="col s3 m3"><img src="https://source.unsplash.com/800x600/?cruise" alt="" class="materialboxed responsive-img"></img></div>
+
+            </div>
+          </div>
+        </div>
 
 
-       </div>
-       <div class="position-relative bg-primary overflow-hidden">
-      <div class="container position-relative zi-2 content-space-3 content-space-md-5">
-            <h1 class="text-white">Ficha técnica</h1>
-            <p class="text-white">aqui va la ficha tecnica </p>
-          <div class="d-grid d-sm-flex justify-content-center gap-2">
-                </div>
+        <div class="container">
+
+          <div class="mx card ">
+
+            <div class="row">
+              <div class="input-field col s3">
+                <p >Tipo de vehículo:</p>
+                <b>{detail.tipo}</b>
+              </div>
+              <div class="input-field col s3">
+                <p >Marca:</p>
+                <b>{detail.marca}</b>
+              </div>
+              <div class="input-field col s3">
+                <p >Modelo:</p>
+                <b>{detail.modelo}</b>
+              </div>
+              <div class="input-field col s3">
+                <p >Año:</p>
+                <b>{detail.anio}</b>
+              </div>
             </div>
 
-
-            
+            <div class="row">
+              <div class="input-field col s3">
+                <p >Color:</p>
+                <b>{detail.color}</b>
               </div>
-              <section class="demo-intro blue darken-3">
-  <div class="container light-blue accent-2">
-    <h1 >Descripción </h1>
-    <p> aqui va la Descripción</p>
-  </div>
-</section>
+              <div class="input-field col s3">
+                <p >Kilometraje:</p>
+                <b>{detail.kilometraje}</b>
+              </div>
+              <div class="input-field col s3">
+                <p >Tipo de factura:</p>
+                <b>{detail.factura}</b>
+              </div>
+              <div class="row">
+                <div class="input-field col s3">
+                  <p >Numero de propiuetarios:</p>
+                  <b>{detail.npropietarios}</b>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s3">
+                <p >Precio:</p>
+                <b>{detail.precio}</b>
+              </div>
+              <div class="input-field col s3">
+                <p >Contacto:</p>
+                <b>{detail.contacto}</b>
+              </div>
+              <div class="input-field col s3">
+                <p >Placa:</p>
+                <b>{detail.placa}</b>
+              </div>
+              <div class="row">
+                <div class="input-field col s3">
+                  <p >NIV:</p>
+                  <b>{detail.niv}</b>
+                </div>
+              </div>
+            </div>
+            
+          </div>
 
 
 
-<h2 class="subtitle">
-</h2>
-<div class="flex-container">
-    <div class="row"> 
-        <div class="flex-item col1">
-			<p >¡¡Llama ya, que no te lo ganen!!</p>
-		</div>
-        <div class="flex-item col2">
-			  <button type="submit" class="btn btn-primary">Agregar a favoritos</button>
-
-		</div>
-    </div>
-</div>
-
-  </div>
 
 
 
-    
-  );
+        </div>
+
+
+
+        <div class="container">
+          <div class="mx-card">
+          <p> {detail.descripcion}</p>
+          </div>
+        </div>
+
+
+
+        <section class="demo-intro blue darken-3">
+          <div class="container light-blue accent-2">
+          <div class="flex-container">
+          <div class="row">
+            <div class="flex-item col1">
+              <p >¡¡Llama ya, que no te lo ganen!!</p>
+              <b>{detail.contacto}</b>
+            </div>
+            <div class="flex-item col2">
+              <button type="submit" class="btn btn-primary">Agregar a favoritos</button>
+
+            </div>
+          </div>
+        </div>
+          </div>
+        </section>
+
+
+
+        
+
+      </div >
+    )
+  } else {
+    return (
+      <h1>cargando</h1>
+    )
+  }
+
 }
 
 export default DetailCard;

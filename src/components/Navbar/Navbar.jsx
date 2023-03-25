@@ -18,13 +18,11 @@ function Navbar() {
       <ul id="nav-mobile" class="right hide-on-med-and-down">
     
     
-        <li><a href="sass.html">INICIAR SESSIÓN</a></li>
-        <li><a href="badges.html">VENDE TU VEHÍCULO</a></li>
-        <li><a href="collapsible.html">CERRAR SESSIÓN </a></li>
+        <li><Link to={"/signup"}>INICIAR SESSIÓN</Link></li>
+        <li><Link to={"/form"}>VENDE TU VEHÍCULO</Link></li>
+        <li><Link to={"/login"}>CERRAR SESSIÓN</Link></li>
+
       </ul>
-      <div width="auto">
-      <img src="logo.jpg.jpg" alt="Logo Ballisco"/>
-      </div>
     </div>
     
     <div class="nav-content">

@@ -1,4 +1,5 @@
 import "./FormCar.css";
+
 function insertCar(ev) {
   ev.preventDefault();
   let dataCar = {};
@@ -15,18 +16,18 @@ function insertCar(ev) {
   dataCar.placa = document.getElementById("placa").value;
   dataCar.niv = document.getElementById("niv").value;
   dataCar.descripcion = document.getElementById("descripcion").value;
-  dataCar.disponible=  true ;
+  dataCar.disponible = true;
 
 
-fetch("http://localhost:5005/api/add-auto",{
-  method:"POST",
-  headers:{
-    "Content-Type":"application/json"
-  },
-  body:JSON.stringify(dataCar)
-})
-.then(data=>console.log("mi respuesta: ",data))
-.catch(err=>console.log("el error",err));
+  fetch("http://localhost:5005/api/add-auto", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(dataCar)
+  })
+    .then(data => console.log("mi respuesta: ", data))
+    .catch(err => console.log("el error", err));
 
   console.log(dataCar);
 }
@@ -43,20 +44,14 @@ function FormCar() {
 
         <div class="container">
           <div class="mx-card">
-            <div class="mx-card-body">
 
-
-
-
-
-            </div>
 
 
             <div class="row">
               <div class="col s12">
                 <div class="row">
                   <div class="input-field col s3">
-                    <input id="tipo_de_vehiculo" type="text" placeholder="Auto - Camioneta - Moto" class="validate"></input>
+                    <input id="tipo_de_vehiculo" type="text" placeholder=" " class="validate"></input>
                     <label class="active" for="tipo_de_vehicculo">Tipo de vehículo</label>
                   </div>
                   <div class="input-field col s3">
@@ -96,12 +91,12 @@ function FormCar() {
                     <div class="row">
                       <div class="input-field col s3">
                         <input id="precio" type="text" placeholder="$$$"
-                          ></input>
+                        ></input>
                         <label class="active" for="precio">precio</label>
                       </div>
                       <div class="input-field col s3">
                         <input id="phone" type="tel" placeholder="123-45-678"
-                          pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="validate"></input>
+                          class="validate"></input>
                         <label class="active" for="phone">Contacto</label>
                       </div>
                       <div class="input-field col s3">

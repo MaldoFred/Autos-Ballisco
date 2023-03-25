@@ -1,31 +1,67 @@
 import "./ProfileSeller.css";
 
-function ProfileSeller() {
-  return (
-    <div>
-      <h1>ProfileSeller</h1>
+import CardsProfile from "../../components/CardsProfile/CardsProfile";
+import { useState, useEffect } from "react";
 
-      <div>
-        <cardsProfile/>
-      </div>
 
-      <div class="row">
-    <div class="col s12 m6">
-      <div class="card">
-        <div class="card-image">
-          <img src="images/sample-1.jpg"/>
-          <span class="card-title">Card Title</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-        </div>
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-        </div>
-      </div>
-    </div>
-  </div>
 
-    </div>
-  );
+const listAutos = function () {
+  console.log("estoy en la funsion")
+
 }
 
+
+
+function ProfileSeller() {
+  const [autos, setAutos] = useState([]);
+  const [recuperado, setRecuperado] = useState(false);
+
+  useEffect(() => {
+    fetch("http://localhost:5005/api/get-auto-disponibles", {
+      method: "GET"
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setAutos(data);
+        setRecuperado(true);
+      })
+
+      .catch(err => console.log("el error", err));
+  }, [])
+
+  if (recuperado == true) {
+    return (
+      <div>
+        <h1>Tus publicaciones</h1>
+        <div class="container">
+          <div class="row">
+            {
+              autos.map((auto) => 
+
+                  <CardsProfile auto={auto} />
+              
+              )
+            }
+          </div>
+        </div>
+        <section class="ontainer blue darken-3">
+  <div class="container blue darken-3">
+    <p class="left-align light">Es uno de los tianguis de autos más grandes del país, el cual ocupa cerca de dos kilómetros de la Carretera Federal Lechería-Texcoco a la altura de la colonia Santa Cruz Venta de Carpio; por esta razón también se le conoce como el tianguis de Venta de Carpio. Aquí, igual que en este tipo de lugares, dueños y compradores buscan trato directo para la compra-venta de los vehículos, sin intermediarios.</p>
+  </div>
+</section>
+
+      </div>
+
+    )
+
+  } else {
+    return (
+      <div>
+        cargando...
+      </div>
+    )
+  }
+}
 export default ProfileSeller;

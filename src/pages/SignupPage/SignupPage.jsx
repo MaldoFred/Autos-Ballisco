@@ -46,9 +46,11 @@ function SignupPage() {
   };
 
   return (
-    <div className="SignupPage">
-      <h1>Sign Up</h1>
 
+<div class="container">
+          <div class="mx-card">
+          <div className="SignupPage">
+        <h4>Regístrate</h4>
       <form onSubmit={handleSignupSubmit}>
         <label>Email:</label>
         <input type="email" name="email" value={email} onChange={handleEmail} />
@@ -66,10 +68,20 @@ function SignupPage() {
 
         <form action="/action_page.php" method="get">
 
-        <input type="checkbox" name="seller" value="seller"/>
-        <label for="seller"> Soy vendedor</label><br />
-        <input type="checkbox" name="vehicle2" value="Car"/>
-  <label for="vehicle2"> Soy comprador</label><br />
+      
+  
+  
+  
+  <section>
+    <div class="container">
+      <div class="table">
+        <div>
+          <div>Soy vendedor</div>
+          <div>Soy comprador</div>
+          </div>
+        </div>
+    </div>
+  </section>
   
 
 </form>
@@ -84,14 +96,18 @@ function SignupPage() {
 
   
 
-        <button type="submit">Sign Up</button>
+        <button type="submit">Regístrate</button>
       </form>
 
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      {errorMessage && <p className="error-message">{errorMessage}</p>} <br />
 
-      <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+      <p>¿Ya tienes cuenta?</p>
+      <Link to={"/login"}> Inicia sesión</Link>
     </div>
+          </div>
+        </div>
+
+   
   );
 }
 
