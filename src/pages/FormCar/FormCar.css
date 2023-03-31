@@ -1,71 +1,34 @@
-*,
-*::before,
-*::after{
-  box-sizing: border-box;
-  /*  1  */
+
+
+
+
+.Container-Form{
+    display: flex;
+    padding: 5px 0px;
+    flex-direction: column;
+    background-image: url("https://images.pexels.com/photos/7909544/pexels-photo-7909544.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.Form{
+    padding: 0px;
+    margin-bottom: 40px;
 }
 
 
-/*  2. Removing all the margins and paddings
-------------------------------------------*/
-*{
-  margin: 0;
-  /*  2  */
-  padding: 0;
-  /*  2  */
-}
 
-/* 3. Color 
- * 4. Typography; size, height and family
- * 5. Background color 
-------------------------------------------*/
-body{
-  color: rgb(32, 32, 33);
-  /*  3  */
-  font-size: 1rem;
-  /*  4  */
-  font-weight: 400;
-  /*  4  */
-  /*  4  */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  /*  4  */
-  background-color: hsl(0, 0%, 100%); 
-  /*  5  */
-}
-
-input,
-button,
-select,
-textarea{
-  color: inherit;
-  /*  3  */
-  font-family: inherit;
-  /*  4  */
-  font-size: inherit;
-  /*  4  */
-  line-height: inherit;
-  /*  4  */
-  letter-spacing: inherit;
-  /*  4  */
-}
-
-/*  6. Making sure hidden will not display
-------------------------------------------*/
-[hidden] {
-  display: none !important;
-  /*  6  */
+button{
+  padding: 0px;
+  margin-bottom: 40px;
 }
 
 
-/* ************************************************* 
-** CSS
-** ************************************************* */
-body{
-  background: #FEFEFE;  /* fallback for old browsers */
- }
 
-/*  Wrapper to be used with BODY as parent 
-------------------------------------------*/
+
 .container{
   width: 50vw;
   position: relative;

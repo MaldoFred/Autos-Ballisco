@@ -47,67 +47,37 @@ function SignupPage() {
 
   return (
 
-<div class="container">
-          <div class="mx-card">
-          <div className="SignupPage">
-        <h4>Regístrate</h4>
-      <form onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
-
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
-
-        <label>Name:</label>
-        <input type="text" name="name" value={name} onChange={handleName} />
-
-        <form action="/action_page.php" method="get">
-
-      
-  
-  
-  
-  <section>
     <div class="container">
-      <div class="table">
-        <div>
-          <div>Soy vendedor</div>
-          <div>Soy comprador</div>
-          </div>
+      <div class="mx-card">
+        <div className="SignupPage">
+          <h4>Regístrate</h4>
+          <form onSubmit={handleSignupSubmit}>
+            <label>Email:</label>
+            <input type="email" name="email" value={email} onChange={handleEmail} />
+
+            <label>Password:</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={handlePassword}
+            />
+
+            <label>Name:</label>
+            <input type="text" name="name" value={name} onChange={handleName} />
+
+            <button type="submit">Regístrate</button>
+          </form>
+
+          {errorMessage && <p className="error-message">{errorMessage}</p>} <br />
+
+          <p>¿Ya tienes cuenta?</p>
+          <Link to={"/login"}> Inicia sesión</Link>
         </div>
+      </div>
     </div>
-  </section>
-  
 
-</form>
-<div class="switch">
-    <label>
-      Soy vendedor
-      <input type="checkbox"/>
-      <span class="lever"></span>
-      Soy comprador
-    </label>
-  </div><br />
 
-  
-
-        <button type="submit">Regístrate</button>
-      </form>
-
-      {errorMessage && <p className="error-message">{errorMessage}</p>} <br />
-
-      <p>¿Ya tienes cuenta?</p>
-      <Link to={"/login"}> Inicia sesión</Link>
-    </div>
-          </div>
-        </div>
-
-   
   );
 }
 

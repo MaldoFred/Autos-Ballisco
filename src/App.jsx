@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom"; 
+import { Route, Routes } from "react-router-dom";
 import 'antd/dist/reset.css';
 import 'materialize-css/dist/css/materialize.min.css';
 
@@ -16,6 +16,8 @@ import FormEdit from "./pages/FormEdit/FormEdit";
 import Navbar from "./components/Navbar/Navbar";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
+import Authentication from "./pages/Authentication/Authentication"
+import LogOut from "./pages/LogOut/LogOut"
 
 function App() {
   return (
@@ -24,9 +26,19 @@ function App() {
       <Routes>
         <Route path="/home" element={<HomePage />} />
         <Route path="/detail/:id" element={<DetailCard />} />
-        <Route path="form" element={<FormCar/>}/>
-        <Route path="profileSeller" element={<ProfileSeller/>}/>
-        <Route path="/formEdit/:id" element={<FormEdit/>}/>
+
+        <Route path="form" element={
+          <IsPrivate>
+            <FormCar />
+          </IsPrivate>
+        } />
+
+        <Route path="profileSeller" element={
+          <IsPrivate>
+            <ProfileSeller />
+          </IsPrivate>
+        } />
+        <Route path="/formEdit/:id" element={<FormEdit />} />
 
 
         <Route
@@ -54,8 +66,14 @@ function App() {
             </IsAnon>
           }
         />
+        <Route
+          path="/logout"
+          element={
+              <LogOut />
+          }
+        />
       </Routes>
-      
+
     </div>
   );
 }

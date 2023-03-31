@@ -8,7 +8,7 @@ const Cards = (props) => {
 
 <div>
 <div class="col s3 m3">    <div class="card">
-      <img src="image.jpg" class="card-img-top" alt="card image" />
+      <img src={props.auto.imagen} class="card-img-top" alt="card image" />
       
 
       <div class="card-marca"><h5>{props.auto.marca} <br /> {props.auto.modelo} </h5></div>

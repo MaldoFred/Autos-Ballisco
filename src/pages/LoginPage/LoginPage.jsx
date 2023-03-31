@@ -37,13 +37,9 @@ function LoginPage() {
         storeToken(response.data.authToken);
         authenticateUser();
 
-        if(response.data.role=="comprador") {
           navigate("/home");
 
-        }else{
-          navigate("/form");
-
-        }
+        
       })
       .catch((error) => {
         // If the request resolves with an error, set the error message in the state
@@ -54,10 +50,12 @@ function LoginPage() {
 
   return (
 
-    <div class="container">
+    
+    
+    <div class="container " >
           <div class="mx-card">
           <div className="LoginPage">
-      <h4>Inicia sesión:</h4>
+      <h4>Inicia sesión:</h4> 
 
       <form onSubmit={handleLoginSubmit}>
         <label>Email:</label>
@@ -80,9 +78,9 @@ function LoginPage() {
     </div>
           </div>
         </div>
+        
 
 
-    
   );
 }
 

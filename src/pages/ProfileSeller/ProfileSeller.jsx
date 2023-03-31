@@ -1,5 +1,7 @@
 import "./ProfileSeller.css";
-
+import { useContext } from "react";
+import { AuthContext } from "../../context/auth.context";
+import { Navigate } from "react-router-dom";
 import CardsProfile from "../../components/CardsProfile/CardsProfile";
 import { useState, useEffect } from "react";
 
@@ -34,7 +36,11 @@ function ProfileSeller() {
   if (recuperado == true) {
     return (
       <div>
-        <h1>Tus publicaciones</h1>
+          <div className="Container-ProfileSeller">
+<div className="ProfileSeller">
+<h5>Tus publicaciones</h5>
+</div> 
+</div>
         <div class="container">
           <div class="row">
             {
@@ -46,11 +52,8 @@ function ProfileSeller() {
             }
           </div>
         </div>
-        <section class="ontainer blue darken-3">
-  <div class="container blue darken-3">
-    <p class="left-align light">Es uno de los tianguis de autos más grandes del país, el cual ocupa cerca de dos kilómetros de la Carretera Federal Lechería-Texcoco a la altura de la colonia Santa Cruz Venta de Carpio; por esta razón también se le conoce como el tianguis de Venta de Carpio. Aquí, igual que en este tipo de lugares, dueños y compradores buscan trato directo para la compra-venta de los vehículos, sin intermediarios.</p>
-  </div>
-</section>
+       
+<footer style={{ textAlign: 'center' }}>Tianguis de autos Ballisco</footer>
 
       </div>
 

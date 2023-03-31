@@ -28,22 +28,25 @@ function DetailCard() {
     return (
       <div>
         <div>
-
-<h5>{detail.marca} {detail.modelo}</h5>
-
-          <div class="container">
-            <div class="row">
-              <div class="col s3 m3"><img src="https://source.unsplash.com/800x600/?beach" alt="" class="materialboxed responsive-img"></img></div>
-              <div class="col s3 m3"><img src="https://source.unsplash.com/800x600/?sand" alt="" class="materialboxed responsive-img"></img></div>
-              <div class="col s3 m3"><img src="https://source.unsplash.com/800x600/?boat" alt="" class="materialboxed responsive-img"></img></div>
-              <div class="col s3 m3"><img src="https://source.unsplash.com/800x600/?cruise" alt="" class="materialboxed responsive-img"></img></div>
-
-            </div>
+        <div className="Container-ProfileSeller">
+          <div className="ProfileSeller">
+            <h5>"{detail.marca} {detail.modelo}"</h5>
           </div>
         </div>
 
+          <div class="container">
+            <div class="row">
+              <div class="col s3 m3"><img src={detail.imagen} alt="" class="materialboxed responsive-img"></img></div>
+              
+            </div>
+          </div>
+          
+        </div>
+
+
 
         <div class="container">
+        <h2 class="line-divider "><span class="span-line-divider ">Ficha técnica</span></h2>
 
           <div class="mx card ">
 
@@ -120,6 +123,8 @@ function DetailCard() {
 
 
         <div class="container">
+        <h2 class="line-divider "><span class="span-line-divider ">Descripción</span></h2>
+
           <div class="mx-card">
           <p> {detail.descripcion}</p>
           </div>
@@ -127,26 +132,18 @@ function DetailCard() {
 
 
 
-        <section class="demo-intro blue darken-3">
-          <div class="container light-blue accent-2">
-          <div class="flex-container">
-          <div class="row">
-            <div class="flex-item col1">
-              <p >¡¡Llama ya, que no te lo ganen!!</p>
-              <b>{detail.contacto}</b>
-            </div>
-            <div class="flex-item col2">
-              <button type="submit" class="btn btn-primary">Agregar a favoritos</button>
+      
 
-            </div>
+        <div className="Container-ProfileSeller">
+          <div className="ProfileSeller">
+          <p >¡¡Llama ya, que no te lo ganen!!</p>
+              <b>{detail.contacto}</b>
+              
           </div>
         </div>
-          </div>
-        </section>
-
-
 
         
+        <footer style={{ textAlign: 'center' }}>Tianguis de autos Ballisco</footer>
 
       </div >
     )

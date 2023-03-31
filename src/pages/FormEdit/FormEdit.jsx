@@ -92,7 +92,7 @@ function FormEdit() {
                                                     <label class="active" for="phone">Contacto</label>
                                                 </div>
                                                 <div class="input-field col s3">
-                                                    <input id="placa" type="text" class="validate" defaultValue={detail.placa}></input>
+                                                    <input id="placas" type="text" class="validate" defaultValue={detail.placa}></input>
                                                     <label class="active" for="placa">Placa</label>
                                                 </div>
                                                 <div class="input-field col s3">
@@ -101,19 +101,7 @@ function FormEdit() {
                                                 </div>
                                             </div>
 
-                                            <div class="row">
-                                                <div class="input-field col s12">
-                                                    <div class="file-field input-field">
-                                                        <div class="btn">
-                                                            <span>Subir fotos</span>
-                                                            <input type="file" multiple></input>
-                                                        </div>
-                                                        <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" placeholder=" Subir Imágenes"></input>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -160,7 +148,7 @@ function FormEdit() {
     dataCar.npropietarios = document.getElementById("propietarios").value;
     dataCar.precio = document.getElementById("precio").value;
     dataCar.contacto = document.getElementById("phone").value;
-    dataCar.placa = document.getElementById("placa").value;
+    dataCar.placas = document.getElementById("placas").value;
     //dataCar.niv = document.getElementById("niv").value;
     dataCar.descripcion = document.getElementById("descripcion").value;
     dataCar.disponible = true;
