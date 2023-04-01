@@ -1,0 +1,18 @@
+.Container-Home{
+    display: flex;
+    padding: 5px 0px;
+    flex-direction: column;
+    background-image: url("https://images.pexels.com/photos/2117938/pexels-photo-2117938.jpeg?auto=compress&cs=tinysrgb&w=1600");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.Home{
+    padding: 0px;
+    margin-bottom: 40px;
+}
+
+

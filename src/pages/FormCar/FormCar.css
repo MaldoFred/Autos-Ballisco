@@ -1,0 +1,58 @@
+
+
+
+
+.Container-Form{
+    display: flex;
+    padding: 5px 0px;
+    flex-direction: column;
+    background-image: url("https://images.pexels.com/photos/7909544/pexels-photo-7909544.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.Form{
+    padding: 0px;
+    margin-bottom: 40px;
+}
+
+
+
+button{
+  padding: 0px;
+  margin-bottom: 40px;
+}
+
+
+
+
+.container{
+  width: 50vw;
+  position: relative;
+  max-width: 1920px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding-right: 1rem;
+  padding-left: 1rem; 
+}
+
+.mx-card{
+  min-width: 320px;
+  max-width: 1024px;
+  width: 100%;
+  position: relative;
+  
+  /*  Optional styling   */
+  background-color: hsl(0, 0%, 100%); 
+  border-radius: 2px;
+-webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+
+
+
+
