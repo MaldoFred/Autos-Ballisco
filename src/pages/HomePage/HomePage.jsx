@@ -14,9 +14,10 @@ const listAutos = function () {
 function HomePage() {
   const [autos, setAutos] = useState([]);
   const [recuperado, setRecuperado] = useState(false);
-
+let urlBase = process.env.REACT_APP_SERVER_URL || "https://www.autos-ballisco-back-production.up.railway.app/api";
+let endPoint = urlBase + "/get-auto-disponibles";
   useEffect(() => {
-    fetch("http://localhost:5005/api/get-auto-disponibles", {
+    fetch(endPoint, {
       method: "GET"
     })
       .then((response) => {
