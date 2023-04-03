@@ -137,38 +137,38 @@ function FormEdit() {
 
         );
     }
-
-}function updateCar(ev) {
-    ev.preventDefault();
-    let dataCar = {};
-    dataCar.tipo = document.getElementById("tipo_de_vehiculo").value;
-    dataCar.marca = document.getElementById("marca").value;
-    dataCar.modelo = document.getElementById("modelo").value;
-    dataCar.anio = document.getElementById("anio").value;
-    dataCar.color = document.getElementById("color").value;
-    dataCar.kilometraje = document.getElementById("kilometraje").value;
-    dataCar.factura = document.getElementById("factura").value;
-    dataCar.npropietarios = document.getElementById("propietarios").value;
-    dataCar.precio = document.getElementById("precio").value;
-    dataCar.contacto = document.getElementById("phone").value;
-    dataCar.placas = document.getElementById("placas").value;
-    //dataCar.niv = document.getElementById("niv").value;
-    dataCar.descripcion = document.getElementById("descripcion").value;
-    dataCar.disponible = true;
-    dataCar.id = document.getElementById("id").value;
-  
-  let urlUpdate=urlBackend+"/update-auto";
-    fetch(urlUpdate, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(dataCar)
-    })
-      .then(data => console.log("mi respuesta: ", data))
-      .catch(err => console.log("el error", err));
-  
-    console.log(dataCar);
-  }
+    function updateCar(ev) {
+        ev.preventDefault();
+        let dataCar = {};
+        dataCar.tipo = document.getElementById("tipo_de_vehiculo").value;
+        dataCar.marca = document.getElementById("marca").value;
+        dataCar.modelo = document.getElementById("modelo").value;
+        dataCar.anio = document.getElementById("anio").value;
+        dataCar.color = document.getElementById("color").value;
+        dataCar.kilometraje = document.getElementById("kilometraje").value;
+        dataCar.factura = document.getElementById("factura").value;
+        dataCar.npropietarios = document.getElementById("propietarios").value;
+        dataCar.precio = document.getElementById("precio").value;
+        dataCar.contacto = document.getElementById("phone").value;
+        dataCar.placas = document.getElementById("placas").value;
+        //dataCar.niv = document.getElementById("niv").value;
+        dataCar.descripcion = document.getElementById("descripcion").value;
+        dataCar.disponible = true;
+        dataCar.id = document.getElementById("id").value;
+      
+      let urlUpdate=urlBackend+"/update-auto";
+        fetch(urlUpdate, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(dataCar)
+        })
+          .then(data => console.log("mi respuesta: ", data))
+          .catch(err => console.log("el error", err));
+      
+        console.log(dataCar);
+      }
+}
 
 export default FormEdit;
