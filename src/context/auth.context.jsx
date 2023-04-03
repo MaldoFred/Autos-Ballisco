@@ -7,9 +7,9 @@ function AuthProviderWrapper(props) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
-  const [urlBackend, setUrlBackend] = useState(null);
-  let urlBase = process.env.REACT_APP_SERVER_URL || "https://autos-ballisco-back-production.up.railway.app/api";
-  setUrlBackend(urlBase);
+  const [urlBackend, setUrlBackend] = useState("https://autos-ballisco-back-production.up.railway.app/api");
+  //let urlBase = process.env.REACT_APP_SERVER_URL || "https://autos-ballisco-back-production.up.railway.app/api";
+  //setUrlBackend(urlBase);
   const storeToken = (token) => {
     localStorage.setItem("authToken", token);
   };
