@@ -157,8 +157,8 @@ function FormEdit() {
     dataCar.disponible = true;
     dataCar.id = document.getElementById("id").value;
   
-  
-    fetch("http://localhost:5005/api/update-auto", {
+  let urlUpdate=urlBackend+"/update-auto";
+    fetch(urlUpdate, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
