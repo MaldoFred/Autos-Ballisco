@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -11,6 +12,7 @@ function FormEdit() {
     const {urlBackend} = useContext(AuthContext);
     const urlDetail = urlBackend+"/get-auto/" + params.id;
     console.log(params.id)
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch(urlDetail, {
@@ -22,6 +24,7 @@ function FormEdit() {
             .then((data) => {
                 setDetail(data);
                 setRecuperado(true);
+
             })
 
             .catch(err => console.log("el error", err));
@@ -168,6 +171,8 @@ function FormEdit() {
           .catch(err => console.log("el error", err));
       
         console.log(dataCar);
+        navigate("/ProfileSeller");
+
       }
 }
 
