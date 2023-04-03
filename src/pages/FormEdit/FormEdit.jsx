@@ -167,11 +167,10 @@ function FormEdit() {
           },
           body: JSON.stringify(dataCar)
         })
-          .then(data => console.log("mi respuesta: ", data))
+          .then(data => navigate("/ProfileSeller"))
           .catch(err => console.log("el error", err));
       
         console.log(dataCar);
-        navigate("/ProfileSeller");
 
       }
 }

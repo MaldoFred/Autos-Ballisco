@@ -28,6 +28,8 @@ const CardsProfile = (props) => {
               method: "delete"
             })
               .then((response) => {
+                navigate("/ProfileSeller");
+
                 return response.json();
               })
               .then((data) => {
