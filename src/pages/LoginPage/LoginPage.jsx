@@ -10,12 +10,9 @@ function LoginPage() {
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
-
   const { storeToken, authenticateUser } = useContext(AuthContext);
-
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
-
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     const requestBody = { email, password };

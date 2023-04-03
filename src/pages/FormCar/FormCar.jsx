@@ -1,5 +1,7 @@
 import "./FormCar.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../../context/auth.context";
+
 
 function FormCar() {
   const [images, setImages] = useState();
@@ -40,7 +42,10 @@ function FormCar() {
     dataCar.disponible = true;
 dataCar.imagen=images;
 
-    fetch("http://localhost:5005/api/add-auto", {
+const {urlBackend} = useContext(AuthContext);
+let endPoint = urlBackend + "/add-auto";
+
+    fetch(endPoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

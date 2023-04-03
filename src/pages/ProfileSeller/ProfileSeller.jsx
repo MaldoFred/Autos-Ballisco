@@ -19,7 +19,9 @@ function ProfileSeller() {
   const [recuperado, setRecuperado] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5005/api/get-auto-disponibles", {
+    const {urlBackend} = useContext(AuthContext);
+    let endPoint = urlBackend + "/get-auto-disponibles";
+    fetch(endPoint, {
       method: "GET"
     })
       .then((response) => {

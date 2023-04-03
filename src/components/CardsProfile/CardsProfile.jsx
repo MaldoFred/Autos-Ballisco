@@ -1,10 +1,11 @@
 import "./CardsProfile.css";
-
+import {useContext } from "react";
+import { AuthContext } from "../../context/auth.context";
 
 const CardsProfile = (props) => {
-  
+  const {urlBackend} = useContext(AuthContext);
   console.log("estoy en componente cards",props)
-  const urlDelete = "http://localhost:5005/api/delete-auto/"+props.auto._id;
+  const urlDelete =urlBackend+"/delete-auto/"+props.auto._id;
   const urlEdit = "/formEdit/"+props.auto._id;
 
   return (

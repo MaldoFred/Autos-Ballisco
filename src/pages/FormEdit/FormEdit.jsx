@@ -1,12 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
+import { AuthContext } from "../../context/auth.context";
+
 
 
 function FormEdit() {
     const [detail, setDetail] = useState([]);
     const [recuperado, setRecuperado] = useState(false);
     const params = useParams();
-    const urlDetail = "http://localhost:5005/api/get-auto/" + params.id;
+    const {urlBackend} = useContext(AuthContext);
+    const urlDetail = urlBackend+"/get-auto/" + params.id;
     console.log(params.id)
 
     useEffect(() => {
