@@ -5,7 +5,7 @@ import { AuthContext } from "../../context/auth.context";
 
 function FormCar() {
   const [images, setImages] = useState();
-
+  const {urlBackend} = useContext(AuthContext);
   const insertCar = async (ev) => {
     ev.preventDefault();
     console.log(images);
@@ -42,7 +42,6 @@ function FormCar() {
     dataCar.disponible = true;
 dataCar.imagen=images;
 
-const {urlBackend} = useContext(AuthContext);
 let endPoint = urlBackend + "/add-auto";
 
     fetch(endPoint, {
