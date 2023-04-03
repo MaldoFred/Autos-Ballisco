@@ -17,9 +17,9 @@ const listAutos = function () {
 function ProfileSeller() {
   const [autos, setAutos] = useState([]);
   const [recuperado, setRecuperado] = useState(false);
+  const {urlBackend} = useContext(AuthContext);
 
   useEffect(() => {
-    const {urlBackend} = useContext(AuthContext);
     let endPoint = urlBackend + "/get-auto-disponibles";
     fetch(endPoint, {
       method: "GET"
